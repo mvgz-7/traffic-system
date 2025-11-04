@@ -41,13 +41,6 @@ export function MonitoringModule() {
     { name: "Storage Used", current: 420, max: 500, unit: "GB", icon: HardDrive, color: "text-yellow-500" },
   ]
 
-  const modelStats = [
-    { metric: "Model Version", value: "YOLOv8n" },
-    { metric: "Inference Time", value: "45ms per frame" },
-    { metric: "FPS", value: "22 frames/sec" },
-    { metric: "Detection Accuracy", value: "98.5%" },
-  ]
-
   const cameraFeeds = [
     { name: "Camera 1 - Right Lane", status: "Active", fps: 30, resolution: "1920x1080" },
     { name: "Camera 2 - Left Lane", status: "Active", fps: 30, resolution: "1920x1080" },
@@ -148,25 +141,7 @@ export function MonitoringModule() {
         </CardContent>
       </Card>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Model Statistics */}
-        <Card>
-          <CardHeader>
-            <CardTitle>AI Model Statistics</CardTitle>
-            <CardDescription>YOLO model and inference performance</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            {modelStats.map((stat) => (
-              <div
-                key={stat.metric}
-                className="flex items-center justify-between p-3 bg-card rounded-lg border border-border"
-              >
-                <span className="text-sm font-medium text-muted-foreground">{stat.metric}</span>
-                <span className="text-sm font-bold text-foreground">{stat.value}</span>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
+      <div>
 
         {/* Camera Feed Status */}
         <Card>
